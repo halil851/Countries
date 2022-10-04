@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
+    
+    var countriesManager = CountriesManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        countriesManager.performRequest()
+        
+        
     }
-
-
 }
 
