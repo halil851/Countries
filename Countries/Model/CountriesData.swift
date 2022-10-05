@@ -7,13 +7,11 @@
 
 import Foundation
 
-
 struct CountriesData: Codable {
-    let data: [Countries]
-    
+    let data: [Country]    
 }
 
-struct Countries: Codable {
+struct Country: Codable {
     let code: String
     let currencyCodes: [String]
     let name: String

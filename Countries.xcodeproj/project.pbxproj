@@ -12,10 +12,10 @@
 		A94FB3C628EC406B00FB436C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A94FB3C428EC406B00FB436C /* Main.storyboard */; };
 		A94FB3C828EC406C00FB436C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A94FB3C728EC406C00FB436C /* Assets.xcassets */; };
 		A94FB3CB28EC406C00FB436C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A94FB3C928EC406C00FB436C /* LaunchScreen.storyboard */; };
-		A9B8AD5228ECA633006C9B25 /* CountriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8AD5128ECA633006C9B25 /* CountriesManager.swift */; };
 		A9B8AD5528ECAFE0006C9B25 /* CountriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8AD5428ECAFE0006C9B25 /* CountriesData.swift */; };
 		A9BBA8BB28ED50AB00F56A2D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BBA8BA28ED50AB00F56A2D /* HomeVC.swift */; };
 		A9BBA8BD28ED58E800F56A2D /* SavedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BBA8BC28ED58E800F56A2D /* SavedVC.swift */; };
+		A9C680AF28EDF7E6000D9E6F /* CountriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C680AE28EDF7E6000D9E6F /* CountriesAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +26,10 @@
 		A94FB3C728EC406C00FB436C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A94FB3CA28EC406C00FB436C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A94FB3CC28EC406C00FB436C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9B8AD5128ECA633006C9B25 /* CountriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesManager.swift; sourceTree = "<group>"; };
 		A9B8AD5428ECAFE0006C9B25 /* CountriesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesData.swift; sourceTree = "<group>"; };
 		A9BBA8BA28ED50AB00F56A2D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = ../../../../Documents/HomeVC.swift; sourceTree = "<group>"; };
 		A9BBA8BC28ED58E800F56A2D /* SavedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedVC.swift; sourceTree = "<group>"; };
+		A9C680AE28EDF7E6000D9E6F /* CountriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +86,8 @@
 		A9B8AD5028ECA615006C9B25 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A9B8AD5128ECA633006C9B25 /* CountriesManager.swift */,
 				A9B8AD5428ECAFE0006C9B25 /* CountriesData.swift */,
+				A9C680AE28EDF7E6000D9E6F /* CountriesAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,11 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9B8AD5228ECA633006C9B25 /* CountriesManager.swift in Sources */,
 				A94FB3BF28EC406B00FB436C /* AppDelegate.swift in Sources */,
 				A9BBA8BB28ED50AB00F56A2D /* HomeVC.swift in Sources */,
 				A9BBA8BD28ED58E800F56A2D /* SavedVC.swift in Sources */,
 				A94FB3C128EC406B00FB436C /* SceneDelegate.swift in Sources */,
+				A9C680AF28EDF7E6000D9E6F /* CountriesAPI.swift in Sources */,
 				A9B8AD5528ECAFE0006C9B25 /* CountriesData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

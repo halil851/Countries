@@ -10,7 +10,7 @@ import Foundation
 
 class SavedVC:  UITableViewController {
     
-    var countriesManager = CountriesManager()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
