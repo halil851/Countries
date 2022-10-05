@@ -16,6 +16,9 @@
 		A9BBA8BB28ED50AB00F56A2D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BBA8BA28ED50AB00F56A2D /* HomeVC.swift */; };
 		A9BBA8BD28ED58E800F56A2D /* SavedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BBA8BC28ED58E800F56A2D /* SavedVC.swift */; };
 		A9C680AF28EDF7E6000D9E6F /* CountriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C680AE28EDF7E6000D9E6F /* CountriesAPI.swift */; };
+		A9C680B728EE03B9000D9E6F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C680B628EE03B9000D9E6F /* star.png */; };
+		A9C680B928EE0559000D9E6F /* star.fill.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C680B828EE0559000D9E6F /* star.fill.png */; };
+		A9C680BD28EE1ED3000D9E6F /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C680BC28EE1ED3000D9E6F /* HomeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		A9BBA8BA28ED50AB00F56A2D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = ../../../../Documents/HomeVC.swift; sourceTree = "<group>"; };
 		A9BBA8BC28ED58E800F56A2D /* SavedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedVC.swift; sourceTree = "<group>"; };
 		A9C680AE28EDF7E6000D9E6F /* CountriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesAPI.swift; sourceTree = "<group>"; };
+		A9C680B628EE03B9000D9E6F /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		A9C680B828EE0559000D9E6F /* star.fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.fill.png; sourceTree = "<group>"; };
+		A9C680BC28EE1ED3000D9E6F /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,12 +70,15 @@
 			children = (
 				A94FB3BE28EC406B00FB436C /* AppDelegate.swift */,
 				A94FB3C028EC406B00FB436C /* SceneDelegate.swift */,
+				A9C680BC28EE1ED3000D9E6F /* HomeCell.swift */,
 				A9B8AD5028ECA615006C9B25 /* Model */,
 				A9B8AD5328ECA63F006C9B25 /* View */,
 				A9B8AD4F28ECA5FC006C9B25 /* Controller */,
 				A94FB3C728EC406C00FB436C /* Assets.xcassets */,
 				A94FB3C928EC406C00FB436C /* LaunchScreen.storyboard */,
 				A94FB3CC28EC406C00FB436C /* Info.plist */,
+				A9C680B628EE03B9000D9E6F /* star.png */,
+				A9C680B828EE0559000D9E6F /* star.fill.png */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -159,8 +168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A94FB3CB28EC406C00FB436C /* LaunchScreen.storyboard in Resources */,
+				A9C680B728EE03B9000D9E6F /* star.png in Resources */,
 				A94FB3C828EC406C00FB436C /* Assets.xcassets in Resources */,
 				A94FB3C628EC406B00FB436C /* Main.storyboard in Resources */,
+				A9C680B928EE0559000D9E6F /* star.fill.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A94FB3BF28EC406B00FB436C /* AppDelegate.swift in Sources */,
+				A9C680BD28EE1ED3000D9E6F /* HomeCell.swift in Sources */,
 				A9BBA8BB28ED50AB00F56A2D /* HomeVC.swift in Sources */,
 				A9BBA8BD28ED58E800F56A2D /* SavedVC.swift in Sources */,
 				A94FB3C128EC406B00FB436C /* SceneDelegate.swift in Sources */,
