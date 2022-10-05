@@ -11,13 +11,14 @@ class HomeCell: UITableViewCell, UINavigationControllerDelegate {
     
     
     
+    
     @IBOutlet weak var countryView: UIView!
     @IBOutlet weak var countryLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        countryView.layer.borderWidth = 1
-//        countryView.layer.cornerRadius = 5
+        countryView.layer.borderWidth = 1
+        countryView.layer.cornerRadius = 8
         
         
         
