@@ -9,25 +9,27 @@
 /* Begin PBXBuildFile section */
 		A94FB3BF28EC406B00FB436C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FB3BE28EC406B00FB436C /* AppDelegate.swift */; };
 		A94FB3C128EC406B00FB436C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FB3C028EC406B00FB436C /* SceneDelegate.swift */; };
-		A94FB3C328EC406B00FB436C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FB3C228EC406B00FB436C /* ViewController.swift */; };
 		A94FB3C628EC406B00FB436C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A94FB3C428EC406B00FB436C /* Main.storyboard */; };
 		A94FB3C828EC406C00FB436C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A94FB3C728EC406C00FB436C /* Assets.xcassets */; };
 		A94FB3CB28EC406C00FB436C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A94FB3C928EC406C00FB436C /* LaunchScreen.storyboard */; };
 		A9B8AD5228ECA633006C9B25 /* CountriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8AD5128ECA633006C9B25 /* CountriesManager.swift */; };
 		A9B8AD5528ECAFE0006C9B25 /* CountriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8AD5428ECAFE0006C9B25 /* CountriesData.swift */; };
+		A9BBA8BB28ED50AB00F56A2D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BBA8BA28ED50AB00F56A2D /* HomeVC.swift */; };
+		A9BBA8BD28ED58E800F56A2D /* SavedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BBA8BC28ED58E800F56A2D /* SavedVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A94FB3BB28EC406B00FB436C /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A94FB3BE28EC406B00FB436C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A94FB3C028EC406B00FB436C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A94FB3C228EC406B00FB436C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A94FB3C528EC406B00FB436C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A94FB3C728EC406C00FB436C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A94FB3CA28EC406C00FB436C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A94FB3CC28EC406C00FB436C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9B8AD5128ECA633006C9B25 /* CountriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesManager.swift; sourceTree = "<group>"; };
 		A9B8AD5428ECAFE0006C9B25 /* CountriesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesData.swift; sourceTree = "<group>"; };
+		A9BBA8BA28ED50AB00F56A2D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = ../../../../Documents/HomeVC.swift; sourceTree = "<group>"; };
+		A9BBA8BC28ED58E800F56A2D /* SavedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +77,8 @@
 		A9B8AD4F28ECA5FC006C9B25 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A94FB3C228EC406B00FB436C /* ViewController.swift */,
+				A9BBA8BA28ED50AB00F56A2D /* HomeVC.swift */,
+				A9BBA8BC28ED58E800F56A2D /* SavedVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,8 +172,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9B8AD5228ECA633006C9B25 /* CountriesManager.swift in Sources */,
-				A94FB3C328EC406B00FB436C /* ViewController.swift in Sources */,
 				A94FB3BF28EC406B00FB436C /* AppDelegate.swift in Sources */,
+				A9BBA8BB28ED50AB00F56A2D /* HomeVC.swift in Sources */,
+				A9BBA8BD28ED58E800F56A2D /* SavedVC.swift in Sources */,
 				A94FB3C128EC406B00FB436C /* SceneDelegate.swift in Sources */,
 				A9B8AD5528ECAFE0006C9B25 /* CountriesData.swift in Sources */,
 			);

@@ -9,11 +9,11 @@ import Foundation
 
 
 struct CountriesData: Codable {
-    let data: [Datas]
+    let data: [Countries]
     
 }
 
-struct Datas: Codable {
+struct Countries: Codable {
     let code: String
     let currencyCodes: [String]
     let name: String
