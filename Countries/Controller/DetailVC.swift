@@ -21,6 +21,8 @@ class DetailVC : UIViewController {
 
     var passCountryName = ""
     var passCountryCode = ""
+    var passWikiDataId = ""
+    
 
     
     var countriesAPI = CountriesAPI()
@@ -30,17 +32,26 @@ class DetailVC : UIViewController {
         super.viewDidLoad()
         navBar.title = passCountryName
         getImage(countryName: passCountryName)
-        countryCode.text = "Country Code: \(passCountryCode)"
+        countryCode.text = passCountryCode
         
         
     }
     
+    @IBAction func infoButton(_ sender: UIButton) {
+        if let url = URL(string: "https://www.wikidata.org/wiki/\(passWikiDataId)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    
     func getImage (countryName: String) {
         let SVGCoder = SDImageSVGCoder.shared
         SDImageCodersManager.shared.addCoder(SVGCoder)
-        
+        let fullNameArr = countryName.split(separator:" ")
 
-        let svgURL = URL(string: "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20\(countryName).svg" )!
+        let svgURL = URL(string: "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20\(fullNameArr[0]).svg" )!
+        
+        
         
         flagImage.sd_setImage(with: svgURL) { (image, error, cacheType, url) in
             if image != nil {
