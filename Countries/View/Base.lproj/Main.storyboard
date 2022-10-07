@@ -130,13 +130,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Country" largeTitleDisplayMode="never" style="editor" id="N6l-xU-V58">
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="zxp-HH-vcG">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="sM9-nt-s0v">
-                                <rect key="frame" x="351" y="0.0" width="43" height="44"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" changesSelectionAsPrimaryAction="YES" id="fN9-jq-dUz">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Itb-vg-he0">
+                                <rect key="frame" x="372" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="star" backgroundImage="star"/>
+                                <state key="normal" image="star" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="savedButtonTap:" destination="Ux5-VK-gKQ" eventType="touchUpInside" id="Spv-yH-UVH"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -144,12 +150,12 @@
                         <outlet property="countryCode" destination="DE7-It-ieT" id="iXh-VF-fp8"/>
                         <outlet property="flagImage" destination="fqb-fS-bLr" id="G7Q-YK-Iy4"/>
                         <outlet property="navBar" destination="N6l-xU-V58" id="WJb-J3-FvH"/>
-                        <outlet property="savedButton" destination="zxp-HH-vcG" id="8YW-xB-9HT"/>
+                        <outlet property="savedButton" destination="Itb-vg-he0" id="7Zd-MD-Kvp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSU-Gc-zk7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39.130434782608695" y="-413.16964285714283"/>
+            <point key="canvasLocation" x="197" y="-459"/>
         </scene>
         <!--Saved-->
         <scene sceneID="hRA-2m-41D">
@@ -219,7 +225,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="star.png" backgroundImage="star.png">
+                                                    <state key="normal" image="star" catalog="system">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
@@ -257,9 +263,8 @@
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="star" width="43" height="44"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill.png" width="43" height="44"/>
-        <image name="star.png" width="43" height="44"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
