@@ -7,9 +7,10 @@
 
 import Foundation
 
-final class CountriesAPI {
+final class CountriesAPI: ObservableObject {
     
     static let shared = CountriesAPI()
+    @Published var posts = [Country]()
     
     func fetchCountriesList(onCompletion: @escaping ([Country]) -> () ) {
         
@@ -26,6 +27,7 @@ final class CountriesAPI {
                 print("couldn't decode JSON")
                 return
             }
+            self.posts = countryList.data
             //print(countryList.data)
             onCompletion(countryList.data)
         }
