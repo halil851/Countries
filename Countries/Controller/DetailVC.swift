@@ -28,25 +28,33 @@ class DetailVC : UIViewController {
         getImage(countryName: passCountryName)
         countryCode.text = passCountryCode
         
-//        if HomeCell.isSaved {
-//            savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-//        }
-        
+        isSaved()
     }
-//    override func viewDidAppear(_ animated: Bool) {
-//        HomeCell.shared.saved()
-//    }
+    
+    func isSaved() {
+        if SavedVC.savedCountryName.contains(where: { $0 == navBar.title}){
+            savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }else {
+            savedButton.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+    }
 
     @IBAction func savedButtonTap(_ sender: UIButton) {
-//        print("savedButtonTap")
-//        HomeCell.isSaved = !HomeCell.isSaved
-//        if HomeCell.isSaved {
-//            savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-//            HomeCell.isSaved = !HomeCell.isSaved
-//        } else {
-//            savedButton.setImage(UIImage(systemName: "star"), for: .normal)
-//            HomeCell.isSaved = !HomeCell.isSaved
-//        }
+        if savedButton.currentImage == UIImage(systemName: "star"){
+            
+            SavedVC.savedCountryName.append(navBar.title ?? "")
+            SavedVC.savedCountryCode.append(countryCode.text ?? "")
+            savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            
+        } else if savedButton.currentImage == UIImage(systemName: "star.fill") {
+            
+            SavedVC.savedCountryName.removeAll(where: {$0 == navBar.title})
+            SavedVC.savedCountryCode.removeAll(where: {$0 == countryCode.text})
+            savedButton.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+        UserDefaults.standard.set(SavedVC.savedCountryName, forKey: "savedCountryName")
+        UserDefaults.standard.set(SavedVC.savedCountryCode, forKey: "savedCountryCode")
+        UserDefaults.standard.synchronize()
     }
     
     
@@ -61,11 +69,11 @@ class DetailVC : UIViewController {
         let SVGCoder = SDImageSVGCoder.shared
         SDImageCodersManager.shared.addCoder(SVGCoder)
         let fullNameArr = countryName.split(separator:" ")
-        let svgURL = URL(string: "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20\(fullNameArr[0]).svg" )!
+        let svgURL = URL(string: "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20\(fullNameArr[0]).svg")!
 
         flagImage.sd_setImage(with: svgURL) { (image, error, cacheType, url) in
             if image != nil {
-                print("SVGView SVG load success")
+                print("Image loaded succesfully")
             }
         }
     }

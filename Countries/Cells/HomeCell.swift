@@ -9,15 +9,20 @@ import UIKit
 
 class HomeCell: UITableViewCell, UINavigationControllerDelegate {
     
+    //var favButtonPressed : (() -> ()) = {}
     
+    var countryModel: Country?
     static let shared = HomeCell()
+    
+    
     
     @IBOutlet weak var savedButton: UIButton!
     @IBOutlet weak var countryView: UIView!
     @IBOutlet weak var countryLabel: UILabel!
     
-    var isSaved : Bool = false
-    var savedItem = [Item]()
+    var code = ""
+    
+    var savedItem = [Country]()
     
     
     
@@ -27,39 +32,32 @@ class HomeCell: UITableViewCell, UINavigationControllerDelegate {
         countryView.layer.borderWidth = 1.5
         countryView.layer.cornerRadius = 10
         
-        //loadItems()
-        
-        
     }
     
+    func configure(model: Country) {
+        self.countryLabel.text = model.name
+        self.code = model.code ?? ""
+    }
     
     
     @IBAction func savedButtonPressed(_ sender: Any) {
         
-        isSaved = !isSaved
-        if isSaved {
+        if savedButton.currentImage == UIImage(systemName: "star"){
+            SavedVC.savedCountryName.append(countryLabel.text ?? "")
+            SavedVC.savedCountryCode.append(code)
             savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            
         } else {
+            SavedVC.savedCountryName.removeAll(where: {$0 == countryLabel.text})
+            SavedVC.savedCountryCode.removeAll(where: {$0 == code})
             savedButton.setImage(UIImage(systemName: "star"), for: .normal)
-           
-           // savedButton.setImage(UIImage(named: "star.png"), for: .normal)
-            
         }
+        UserDefaults.standard.set(SavedVC.savedCountryName, forKey: "saved")
+        UserDefaults.standard.set(SavedVC.savedCountryCode, forKey: "savedCode")
+        UserDefaults.standard.synchronize()
+        
         
     }
     
-//    func loadItems () {
-//        if let data = try? Data(contentsOf: dataFilePath!){
-//            let decoder = PropertyListDecoder()
-//            do {
-//                savedItem = try decoder.decode([Item].self, from: data)
-//            } catch {
-//                print("error decoding savedItem")
-//            }
-//
-//        }
-//    }
     
-    
+ 
 }

@@ -12,7 +12,7 @@ struct CountriesData: Codable {
 }
 
 struct Country: Codable {
-    let code: String
+    let code: String?
     let currencyCodes: [String]
     let name: String
     let wikiDataId: String
