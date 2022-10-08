@@ -16,10 +16,9 @@ class HomeCell: UITableViewCell, UINavigationControllerDelegate {
     @IBOutlet weak var countryView: UIView!
     @IBOutlet weak var countryLabel: UILabel!
     
-    static var isSaved : Bool = false
+    var isSaved : Bool = false
     var savedItem = [Item]()
     
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
     
     override func awakeFromNib() {
@@ -37,14 +36,13 @@ class HomeCell: UITableViewCell, UINavigationControllerDelegate {
     
     @IBAction func savedButtonPressed(_ sender: Any) {
         
-        HomeCell.isSaved = !HomeCell.isSaved
-        if HomeCell.isSaved {
+        isSaved = !isSaved
+        if isSaved {
             savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            let newItem = Item()
-            newItem.title = countryLabel.text!
-            print(savedItem)
+            
         } else {
             savedButton.setImage(UIImage(systemName: "star"), for: .normal)
+           
            // savedButton.setImage(UIImage(named: "star.png"), for: .normal)
             
         }

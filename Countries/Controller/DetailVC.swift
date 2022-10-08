@@ -28,9 +28,9 @@ class DetailVC : UIViewController {
         getImage(countryName: passCountryName)
         countryCode.text = passCountryCode
         
-        if HomeCell.isSaved {
-            savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        }
+//        if HomeCell.isSaved {
+//            savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+//        }
         
     }
 //    override func viewDidAppear(_ animated: Bool) {
@@ -38,15 +38,15 @@ class DetailVC : UIViewController {
 //    }
 
     @IBAction func savedButtonTap(_ sender: UIButton) {
-        print("savedButtonTap")
-        HomeCell.isSaved = !HomeCell.isSaved
-        if HomeCell.isSaved {
-            savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-
-        } else {
-            savedButton.setImage(UIImage(systemName: "star"), for: .normal)
-
-        }
+//        print("savedButtonTap")
+//        HomeCell.isSaved = !HomeCell.isSaved
+//        if HomeCell.isSaved {
+//            savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+//            HomeCell.isSaved = !HomeCell.isSaved
+//        } else {
+//            savedButton.setImage(UIImage(systemName: "star"), for: .normal)
+//            HomeCell.isSaved = !HomeCell.isSaved
+//        }
     }
     
     
