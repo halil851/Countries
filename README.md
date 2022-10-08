@@ -5,7 +5,7 @@
 This app shows you countries and their information. Such as their flag, country code. Also provide accesing to website's by clicking a button.
     
     
-    App allows you to add the country you want to the Saved List.
+   App allows you to add the country you want to the Saved List.
     
     
 ## Technologies  
