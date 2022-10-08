@@ -9,13 +9,9 @@ import UIKit
 
 class HomeCell: UITableViewCell, UINavigationControllerDelegate {
     
-    //var favButtonPressed : (() -> ()) = {}
-    
     var countryModel: Country?
     static let shared = HomeCell()
-    
-    
-    
+       
     @IBOutlet weak var savedButton: UIButton!
     @IBOutlet weak var countryView: UIView!
     @IBOutlet weak var countryLabel: UILabel!
@@ -23,8 +19,6 @@ class HomeCell: UITableViewCell, UINavigationControllerDelegate {
     var code = ""
     
     var savedItem = [Country]()
-    
-    
     
     override func awakeFromNib() {
 
@@ -43,14 +37,19 @@ class HomeCell: UITableViewCell, UINavigationControllerDelegate {
     @IBAction func savedButtonPressed(_ sender: Any) {
         
         if savedButton.currentImage == UIImage(systemName: "star"){
+            
             SavedVC.savedCountryName.append(countryLabel.text ?? "")
             SavedVC.savedCountryCode.append(code)
             savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            
         } else {
+            
             SavedVC.savedCountryName.removeAll(where: {$0 == countryLabel.text})
             SavedVC.savedCountryCode.removeAll(where: {$0 == code})
             savedButton.setImage(UIImage(systemName: "star"), for: .normal)
         }
+        
+        // adding favorite countries to a plist by using UserDefaults
         UserDefaults.standard.set(SavedVC.savedCountryName, forKey: "saved")
         UserDefaults.standard.set(SavedVC.savedCountryCode, forKey: "savedCode")
         UserDefaults.standard.synchronize()

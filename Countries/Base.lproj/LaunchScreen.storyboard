@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="180" translatesAutoresizingMaskIntoConstraints="NO" id="hl8-eP-cj2">
-                                <rect key="frame" x="42" y="296" width="307" height="253"/>
+                                <rect key="frame" x="16" y="271" width="358" height="303"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

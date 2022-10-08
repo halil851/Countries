@@ -46,6 +46,7 @@ class SavedCell: UITableViewCell, UINavigationControllerDelegate {
         UserDefaults.standard.set(SavedVC.savedCountryName, forKey: "savedCountryName")
         UserDefaults.standard.set(SavedVC.savedCountryCode, forKey: "savedCountryCode")
         UserDefaults.standard.synchronize()
+        
     }
     
 }

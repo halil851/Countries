@@ -10,13 +10,11 @@ import Foundation
 
 class SavedVC:  UITableViewController {
     
-    
     static var savedCountryName = UserDefaults.standard.object(forKey: "savedCountryName") as? [String] ?? [String]()
     static var savedCountryCode = UserDefaults.standard.object(forKey: "savedCountryCode") as? [String] ?? [String]()
     
     var countryList = [Country]()
     var name = Country(code: "", currencyCodes: [""], name: "", wikiDataId: "")
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +33,11 @@ class SavedVC:  UITableViewController {
         let countryCode = SavedVC.savedCountryCode[indexPath.row]
         cell.configure(name: countryName, code: countryCode)
         
-        
         tableView.rowHeight = 70
+        
         if SavedVC.savedCountryName.contains(where: { $0 == cell.savedLabel.text}){
             cell.savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        }else {
+        } else {
             cell.savedButton.setImage(UIImage(systemName: "star"), for: .normal)
         }
         
