@@ -20,7 +20,7 @@ class SavedVC:  UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-           
+        tableView.separatorStyle = .none
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

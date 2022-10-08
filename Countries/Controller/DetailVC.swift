@@ -22,8 +22,8 @@ class DetailVC : UIViewController {
     var passWikiDataId = ""
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+        
         navBar.title = passCountryName
         getImage(countryName: passCountryName)
         countryCode.text = passCountryCode

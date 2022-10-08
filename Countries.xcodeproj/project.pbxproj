@@ -103,7 +103,6 @@
 			children = (
 				A94FB3BE28EC406B00FB436C /* AppDelegate.swift */,
 				A94FB3C028EC406B00FB436C /* SceneDelegate.swift */,
-				A943DA0228F19D11001A6472 /* Cells */,
 				A9B8AD5028ECA615006C9B25 /* Model */,
 				A9B8AD5328ECA63F006C9B25 /* View */,
 				A9B8AD4F28ECA5FC006C9B25 /* Controller */,
@@ -117,6 +116,7 @@
 		A9B8AD4F28ECA5FC006C9B25 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A943DA0228F19D11001A6472 /* Cells */,
 				A9BBA8BA28ED50AB00F56A2D /* HomeVC.swift */,
 				A9BBA8BC28ED58E800F56A2D /* SavedVC.swift */,
 				A976850A28EF6BE200C5F0CA /* DetailVC.swift */,
