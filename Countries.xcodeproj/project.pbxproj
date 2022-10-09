@@ -15,10 +15,10 @@
 		A94FB3CB28EC406C00FB436C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A94FB3C928EC406C00FB436C /* LaunchScreen.storyboard */; };
 		A976850B28EF6BE200C5F0CA /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A976850A28EF6BE200C5F0CA /* DetailVC.swift */; };
 		A9B8AD5528ECAFE0006C9B25 /* CountriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B8AD5428ECAFE0006C9B25 /* CountriesData.swift */; };
-		A9BBA8BB28ED50AB00F56A2D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BBA8BA28ED50AB00F56A2D /* HomeVC.swift */; };
 		A9BBA8BD28ED58E800F56A2D /* SavedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BBA8BC28ED58E800F56A2D /* SavedVC.swift */; };
 		A9C680AF28EDF7E6000D9E6F /* CountriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C680AE28EDF7E6000D9E6F /* CountriesAPI.swift */; };
 		A9C680BD28EE1ED3000D9E6F /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C680BC28EE1ED3000D9E6F /* HomeCell.swift */; };
+		A9DEBC1728F2F43B00508319 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DEBC1628F2F43B00508319 /* HomeVC.swift */; };
 		A9E2783D28EF0B0B008C3AC0 /* SavedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E2783C28EF0B0B008C3AC0 /* SavedCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,10 +33,10 @@
 		A94FB3CC28EC406C00FB436C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A976850A28EF6BE200C5F0CA /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		A9B8AD5428ECAFE0006C9B25 /* CountriesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesData.swift; sourceTree = "<group>"; };
-		A9BBA8BA28ED50AB00F56A2D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = ../../../../Documents/HomeVC.swift; sourceTree = "<group>"; };
 		A9BBA8BC28ED58E800F56A2D /* SavedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedVC.swift; sourceTree = "<group>"; };
 		A9C680AE28EDF7E6000D9E6F /* CountriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesAPI.swift; sourceTree = "<group>"; };
 		A9C680BC28EE1ED3000D9E6F /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		A9DEBC1628F2F43B00508319 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		A9E2783C28EF0B0B008C3AC0 /* SavedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCell.swift; sourceTree = "<group>"; };
 		F3A40E3A04D52E2918E1B854 /* Pods_Countries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Countries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA64ECF3832A240FB7E8A111 /* Pods-Countries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.debug.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,9 +117,9 @@
 		A9B8AD4F28ECA5FC006C9B25 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A9BBA8BA28ED50AB00F56A2D /* HomeVC.swift */,
 				A9BBA8BC28ED58E800F56A2D /* SavedVC.swift */,
 				A976850A28EF6BE200C5F0CA /* DetailVC.swift */,
+				A9DEBC1628F2F43B00508319 /* HomeVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -258,11 +258,11 @@
 			files = (
 				A94FB3BF28EC406B00FB436C /* AppDelegate.swift in Sources */,
 				A9C680BD28EE1ED3000D9E6F /* HomeCell.swift in Sources */,
-				A9BBA8BB28ED50AB00F56A2D /* HomeVC.swift in Sources */,
 				A9BBA8BD28ED58E800F56A2D /* SavedVC.swift in Sources */,
 				A976850B28EF6BE200C5F0CA /* DetailVC.swift in Sources */,
 				A94FB3C128EC406B00FB436C /* SceneDelegate.swift in Sources */,
 				A9E2783D28EF0B0B008C3AC0 /* SavedCell.swift in Sources */,
+				A9DEBC1728F2F43B00508319 /* HomeVC.swift in Sources */,
 				A9C680AF28EDF7E6000D9E6F /* CountriesAPI.swift in Sources */,
 				A9B8AD5528ECAFE0006C9B25 /* CountriesData.swift in Sources */,
 			);
