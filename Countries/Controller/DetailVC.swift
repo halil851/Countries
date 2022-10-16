@@ -29,7 +29,7 @@ class DetailVC : UIViewController {
         
         navBar.title = passCountryName
         getImage()
-        countryCode.text = passCountryCode
+        countryCode.text = "Country Code: \(passCountryCode)"
         
         isSaved()
     }

@@ -105,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fqb-fS-bLr">
-                                <rect key="frame" x="0.0" y="115" width="414" height="347"/>
+                                <rect key="frame" x="0.0" y="115" width="414" height="365"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiZ-o9-y7l">
                                 <rect key="frame" x="20" y="530" width="170" height="30"/>
@@ -119,18 +119,8 @@
                                     <action selector="infoButton:" destination="Ux5-VK-gKQ" eventType="touchUpInside" id="D6e-YB-36n"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Country Code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1j-tF-qSy">
-                                <rect key="frame" x="20" y="488" width="127" height="34"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DE7-It-ieT">
-                                <rect key="frame" x="172" y="488" width="90" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="Fmk-fW-dyM"/>
-                                    <constraint firstAttribute="height" constant="34" id="iaq-9L-9zE"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DE7-It-ieT">
+                                <rect key="frame" x="20" y="506" width="209" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -139,15 +129,15 @@
                         <viewLayoutGuide key="safeArea" id="YNu-Fq-VnK"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
+                            <constraint firstItem="fqb-fS-bLr" firstAttribute="trailing" secondItem="YNu-Fq-VnK" secondAttribute="trailing" id="075-d0-oua"/>
+                            <constraint firstItem="YNu-Fq-VnK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iiZ-o9-y7l" secondAttribute="trailing" symbolic="YES" id="1aj-YL-gtw"/>
                             <constraint firstAttribute="bottom" secondItem="DE7-It-ieT" secondAttribute="bottom" constant="374" id="2up-Ek-0io"/>
-                            <constraint firstItem="DE7-It-ieT" firstAttribute="firstBaseline" secondItem="V1j-tF-qSy" secondAttribute="firstBaseline" id="8HR-nG-hXp"/>
-                            <constraint firstItem="V1j-tF-qSy" firstAttribute="leading" secondItem="YNu-Fq-VnK" secondAttribute="leading" constant="20" id="8Wa-bJ-bDi"/>
-                            <constraint firstItem="DE7-It-ieT" firstAttribute="baseline" secondItem="V1j-tF-qSy" secondAttribute="baseline" id="DIw-7E-T4P"/>
+                            <constraint firstItem="fqb-fS-bLr" firstAttribute="leading" secondItem="YNu-Fq-VnK" secondAttribute="leading" id="8KL-g6-gIa"/>
+                            <constraint firstItem="DE7-It-ieT" firstAttribute="leading" secondItem="YNu-Fq-VnK" secondAttribute="leading" constant="20" id="9O9-oo-aRf"/>
                             <constraint firstItem="iiZ-o9-y7l" firstAttribute="top" secondItem="DE7-It-ieT" secondAttribute="bottom" constant="8" id="Ipx-lu-kNM"/>
                             <constraint firstItem="iiZ-o9-y7l" firstAttribute="leading" secondItem="YNu-Fq-VnK" secondAttribute="leading" constant="20" id="JYM-HI-Zx7"/>
                             <constraint firstItem="DE7-It-ieT" firstAttribute="top" secondItem="fqb-fS-bLr" secondAttribute="bottom" constant="26" id="KKa-ih-UML"/>
                             <constraint firstItem="fqb-fS-bLr" firstAttribute="centerX" secondItem="iAL-Fz-o2Y" secondAttribute="centerX" id="WUB-ir-CQ9"/>
-                            <constraint firstItem="DE7-It-ieT" firstAttribute="leading" secondItem="V1j-tF-qSy" secondAttribute="trailing" constant="8" id="XsV-Yc-11D"/>
                             <constraint firstItem="fqb-fS-bLr" firstAttribute="top" secondItem="YNu-Fq-VnK" secondAttribute="top" constant="23" id="Zd4-7l-mrU"/>
                             <constraint firstItem="fqb-fS-bLr" firstAttribute="leading" secondItem="YNu-Fq-VnK" secondAttribute="leading" id="qwD-g3-lgy"/>
                             <constraint firstItem="YNu-Fq-VnK" firstAttribute="trailing" secondItem="DE7-It-ieT" secondAttribute="trailing" constant="185" id="uAt-rH-e98"/>
