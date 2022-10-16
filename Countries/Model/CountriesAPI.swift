@@ -27,7 +27,6 @@ final class CountriesAPI: ObservableObject {
                     print("couldn't decode JSON")
                     return
                 }
-                self.posts = countryList.data
                 
                 onCompletion(countryList.data)
             }

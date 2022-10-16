@@ -17,6 +17,9 @@ class DetailVC : UIViewController {
     @IBOutlet weak var countryCode: UILabel!
     @IBOutlet weak var flagImage: UIImageView!
     
+    
+    var countryNames = [CountryDetails]()
+    
     var passCountryName = ""
     var passCountryCode = ""
     var passWikiDataId = ""
@@ -25,7 +28,7 @@ class DetailVC : UIViewController {
         super.viewDidLoad()
         
         navBar.title = passCountryName
-        getImage(countryName: passCountryName)
+        getImage()
         countryCode.text = passCountryCode
         
         isSaved()
@@ -38,7 +41,7 @@ class DetailVC : UIViewController {
             savedButton.setImage(UIImage(systemName: "star"), for: .normal)
         }
     }
-
+    
     @IBAction func savedButtonTap(_ sender: UIButton) {
         if savedButton.currentImage == UIImage(systemName: "star"){
             
@@ -63,18 +66,43 @@ class DetailVC : UIViewController {
             UIApplication.shared.open(url)
         }
     }
+    // MARK: - Getting flag images
     
-    func getImage (countryName: String) {
+    func getImage () {
         
         let SVGCoder = SDImageSVGCoder.shared
         SDImageCodersManager.shared.addCoder(SVGCoder)
-        let fullNameArr = countryName.split(separator:" ")
-        let svgURL = URL(string: "http://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20\(fullNameArr[0]).svg")!
-
-        flagImage.sd_setImage(with: svgURL) { (image, error, cacheType, url) in
+        //let fullNameArr = countryName.split(separator:" ")
+        
+        if let url = URL(string: "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/\(passCountryCode)?limit=10&rapidapi-key=ee432ced90msh2d96ce8d845cc2cp1a83dajsn5bc61b24a12f") {
+            
+            let session = URLSession(configuration: .default)
+            
+            let task = session.dataTask(with: url) { data, response, error in
+                if error == nil {
+                    let decoder = JSONDecoder()
+                    if let safeData = data {
+                        do {
+                            let results = try decoder.decode(CountryDetails.self, from: safeData)
+                            self.setImage(results: results)
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    func setImage (results: CountryDetails) {
+        let svgURL = URL(string: results.data.flagImageUri!)
+        
+        self.flagImage.sd_setImage(with: svgURL) { (image, error, cacheType, url) in
             if image != nil {
                 print("Image loaded succesfully")
             }
         }
     }
 }
+
