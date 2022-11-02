@@ -13,8 +13,8 @@ class SavedVC:  UITableViewController {
     static var savedCountryName = UserDefaults.standard.object(forKey: "savedCountryName") as? [String] ?? [String]()
     static var savedCountryCode = UserDefaults.standard.object(forKey: "savedCountryCode") as? [String] ?? [String]()
     
-    var countryList = [Country]()
-    var name = Country(code: "", currencyCodes: [""], name: "", wikiDataId: "")
+//    var countryList = [Country]()
+//    var name = Country(code: "", currencyCodes: [""], name: "", wikiDataId: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +48,7 @@ class SavedVC:  UITableViewController {
         
         tableView.reloadData()
     }
+
 }
 
 

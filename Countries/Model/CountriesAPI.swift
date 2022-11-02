@@ -10,7 +10,7 @@ import Foundation
 final class CountriesAPI: ObservableObject {
     
     static let shared = CountriesAPI()
-    @Published var posts = [Country]()
+    //@Published var posts = [Country]()
     
     func fetchCountriesList(onCompletion: @escaping ([Country]) -> () ) {
         

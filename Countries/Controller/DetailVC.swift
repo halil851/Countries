@@ -20,6 +20,7 @@ class DetailVC : UIViewController {
     
     var countryNames = [CountryDetails]()
     
+    @IBOutlet weak var button: UIButton!
     var passCountryName = ""
     var passCountryCode = ""
     var passWikiDataId = ""
@@ -37,10 +38,17 @@ class DetailVC : UIViewController {
     func isSaved() {
         if SavedVC.savedCountryName.contains(where: { $0 == navBar.title}){
             savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        }else {
+        } else {
             savedButton.setImage(UIImage(systemName: "star"), for: .normal)
         }
     }
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {
+//        performSegue(withIdentifier: "goToHome", sender: self)
+        navigationController?.popToRootViewController(animated: true)
+
+    }
+    
     
     @IBAction func savedButtonTap(_ sender: UIButton) {
         if savedButton.currentImage == UIImage(systemName: "star"){
