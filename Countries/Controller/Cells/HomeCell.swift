@@ -10,8 +10,6 @@ import CoreData
 
 class HomeCell: UITableViewCell, UINavigationControllerDelegate {
     
-    static let shared = HomeCell()
-    
     @IBOutlet weak var saveButton: UIButton!
     
     @IBOutlet weak var countryView: UIView!

@@ -20,6 +20,7 @@ class HomeVC:  UITableViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var itemsToCD = [Item]()
     static var saved = [Item]()
+    var sendTheIndexPathRow = Int()
    
     
     override func viewDidLoad() {
@@ -142,6 +143,8 @@ extension HomeVC {
         name = countryList[indexPath.row]
         print(name.name)
         
+        sendTheIndexPathRow = indexPath.row
+        print("\(sendTheIndexPathRow) from HomeVC")
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.reloadData()
         
@@ -155,11 +158,11 @@ extension HomeVC {
             destinationVC.passCountryName = name.name
             destinationVC.passCountryCode = name.code ?? "None"
             destinationVC.passWikiDataId = name.wikiDataId
-     
+            destinationVC.getIndexPathRow = sendTheIndexPathRow
         }
     }
     
-    // MARK: - Model Manupulation Methods
+    // MARK: - CoreData Storage Manager
 
     func saveItems() {
         do{

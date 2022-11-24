@@ -11,6 +11,7 @@ import SDWebImageSVGCoder
 
 class DetailVC : UIViewController {
     
+    static let shared = DetailVC()
     @IBOutlet weak var navBar: UINavigationItem!
     
     @IBOutlet weak var savedButton: UIButton!
@@ -21,9 +22,12 @@ class DetailVC : UIViewController {
     var countryNames = [CountryDetails]()
     
     @IBOutlet weak var button: UIButton!
-    var passCountryName = ""
-    var passCountryCode = ""
-    var passWikiDataId = ""
+    
+    var passCountryName = String()
+    var passCountryCode = String()
+    var passWikiDataId = String()
+    var getIndexPathRow = Int()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +42,11 @@ class DetailVC : UIViewController {
         
     }
     
+    
+    
     func isSaved() {
-        if SavedVC.savedCountryName.contains(where: { $0 == navBar.title}){
+        
+        if HomeVC.shared.itemsToCD[getIndexPathRow].done{
             savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         } else {
             savedButton.setImage(UIImage(systemName: "star"), for: .normal)
@@ -53,21 +60,15 @@ class DetailVC : UIViewController {
     
     
     @IBAction func savedButtonTap(_ sender: UIButton) {
+        
         if savedButton.currentImage == UIImage(systemName: "star"){
-            
-            SavedVC.savedCountryName.append(navBar.title ?? "")
-            SavedVC.savedCountryCode.append(countryCode.text ?? "")
             savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            
-        } else if savedButton.currentImage == UIImage(systemName: "star.fill") {
-            
-            SavedVC.savedCountryName.removeAll(where: {$0 == navBar.title})
-            SavedVC.savedCountryCode.removeAll(where: {$0 == countryCode.text})
+        } else {
             savedButton.setImage(UIImage(systemName: "star"), for: .normal)
         }
-        UserDefaults.standard.set(SavedVC.savedCountryName, forKey: "savedCountryName")
-        UserDefaults.standard.set(SavedVC.savedCountryCode, forKey: "savedCountryCode")
-        UserDefaults.standard.synchronize()
+        HomeVC.shared.itemsToCD[getIndexPathRow].done = !HomeVC.shared.itemsToCD[getIndexPathRow].done
+        
+        HomeVC.shared.saveItems()
     }
     
     

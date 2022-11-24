@@ -113,7 +113,6 @@
 				A9B8AD5328ECA63F006C9B25 /* View */,
 				A9B8AD4F28ECA5FC006C9B25 /* Controller */,
 				A94FB3C728EC406C00FB436C /* Assets.xcassets */,
-				A94FB3C928EC406C00FB436C /* LaunchScreen.storyboard */,
 				A94FB3CC28EC406C00FB436C /* Info.plist */,
 			);
 			path = Countries;
@@ -122,6 +121,7 @@
 		A9B8AD4F28ECA5FC006C9B25 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A943DA0228F19D11001A6472 /* Cells */,
 				A9DEBC1628F2F43B00508319 /* HomeVC.swift */,
 				A9BBA8BC28ED58E800F56A2D /* SavedVC.swift */,
 				A976850A28EF6BE200C5F0CA /* DetailVC.swift */,
@@ -144,8 +144,8 @@
 		A9B8AD5328ECA63F006C9B25 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A94FB3C928EC406C00FB436C /* LaunchScreen.storyboard */,
 				A94FB3C428EC406B00FB436C /* Main.storyboard */,
-				A943DA0228F19D11001A6472 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
