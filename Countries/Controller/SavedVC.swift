@@ -10,22 +10,25 @@ import Foundation
 import CoreData
 
 class SavedVC:  UITableViewController {
-    
-    static var savedCountryName = UserDefaults.standard.object(forKey: "savedCountryName") as? [String] ?? [String]()
-    static var savedCountryCode = UserDefaults.standard.object(forKey: "savedCountryCode") as? [String] ?? [String]()
-    
+
     static let shared = SavedVC()
     var savedCountries = [CountrySavedManager]()
+    var passName = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.separatorStyle = .none
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         refreshData()
         getSavedCountries()
         
     }
     override func viewDidAppear(_ animated: Bool) {
+        refreshData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         refreshData()
     }
     
@@ -91,15 +94,42 @@ class SavedVC:  UITableViewController {
         cell.savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
   
         let countryName = savedCountries[indexPath.row].title
-        let countryCode = "121"  //SavedVC.savedCountryCode[indexPath.row]
         cell.savedLabel.text = countryName
         
-  
+        
         tableView.rowHeight = 70
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        passName = savedCountries[indexPath.row].title
+        
+        
+        
+
+        performSegue(withIdentifier: "goToDetailFromSavedVC", sender: self)
+        
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var sendIndexPathRow = 0
+        if segue.identifier == "goToDetailFromSavedVC" {
+            
+            let destinationVC = segue.destination as! DetailVC
+            for country in HomeVC.countryList {
+                
+                sendIndexPathRow += 1
+
+                if country.name == passName {
+                    destinationVC.getIndexPathRow = sendIndexPathRow - 1
+                    destinationVC.passCountryName = country.name
+                    destinationVC.passCountryCode = country.code ?? "TR"
+                    destinationVC.passWikiDataId = country.wikiDataId
+                }
+            }
+        }
+    }
 }
 
 

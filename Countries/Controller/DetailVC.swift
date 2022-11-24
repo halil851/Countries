@@ -13,7 +13,7 @@ class DetailVC : UIViewController {
     
     static let shared = DetailVC()
     @IBOutlet weak var navBar: UINavigationItem!
-    
+    let savedVC = SavedVC()
     @IBOutlet weak var savedButton: UIButton!
     @IBOutlet weak var countryCode: UILabel!
     @IBOutlet weak var flagImage: UIImageView!
@@ -45,7 +45,7 @@ class DetailVC : UIViewController {
     
     
     func isSaved() {
-        
+        print(getIndexPathRow)
         if HomeVC.shared.itemsToCD[getIndexPathRow].done{
             savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         } else {
@@ -82,8 +82,9 @@ class DetailVC : UIViewController {
     func getImage () {
         
         let SVGCoder = SDImageSVGCoder.shared
-        SDImageCodersManager.shared.addCoder(SVGCoder)
        
+        SDImageCodersManager.shared.addCoder(SVGCoder)
+        
         
         if let url = URL(string: "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/\(passCountryCode)?limit=10&rapidapi-key=ee432ced90msh2d96ce8d845cc2cp1a83dajsn5bc61b24a12f") {
             

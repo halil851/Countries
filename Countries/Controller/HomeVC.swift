@@ -14,12 +14,12 @@ class HomeVC:  UITableViewController {
     //var homeCell = HomeCell()
     static let shared = HomeVC()
     
-    var countryList = [Country]()
+    static var countryList = [Country]()
     var name = Country(code: "", currencyCodes: [""], name: "", wikiDataId: "")
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var itemsToCD = [Item]()
-    static var saved = [Item]()
+//    static var saved = [Item]()
     var sendTheIndexPathRow = Int()
    
     
@@ -33,7 +33,7 @@ class HomeVC:  UITableViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         let anonymousFunction = { (fetchedCountryList: [Country]) in
-            self.countryList = fetchedCountryList
+            HomeVC.countryList = fetchedCountryList
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -65,23 +65,23 @@ extension HomeVC {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         
-        return countryList.count
+        return HomeVC.countryList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountriesCell", for: indexPath) as! HomeCell
         
-        let name = countryList[indexPath.row]
+        let name = HomeVC.countryList[indexPath.row]
         cell.countryLabel.text = name.name
 
         // if itemsToCD already exist // it avoids adding unnecessery new Item
-        if itemsToCD.count < countryList.count {
+        if itemsToCD.count < HomeVC.countryList.count {
             let newItem = Item(context: context)
             newItem.title = name.name
             newItem.done = false
             itemsToCD.append(newItem)
-            HomeVC.saved.append(newItem)
+//            HomeVC.saved.append(newItem)
         }
         
         
@@ -104,8 +104,6 @@ extension HomeVC {
     
     override func viewWillAppear(_ animated: Bool) {
         
-//        print(HomeVC.filtered)
-        
         tableView.reloadData()
     }
     
@@ -119,12 +117,7 @@ extension HomeVC {
     override func viewDidDisappear(_ animated: Bool) {
        
     }
-    override func viewDidLayoutSubviews() {
-        
-    }
-    override func viewWillLayoutSubviews() {
-//        print(HomeVC.filtered)
-    }
+    
     
     
     func reloadTable(){
@@ -140,11 +133,10 @@ extension HomeVC {
 
 extension HomeVC {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        name = countryList[indexPath.row]
-        print(name.name)
+        name = HomeVC.countryList[indexPath.row]
+//        print(name.name)
         
         sendTheIndexPathRow = indexPath.row
-        print("\(sendTheIndexPathRow) from HomeVC")
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.reloadData()
         
@@ -177,7 +169,7 @@ extension HomeVC {
         let request : NSFetchRequest<Item> = Item.fetchRequest()
         do {
             itemsToCD = try context.fetch(request)
-            HomeVC.saved = try context.fetch(request)
+//            HomeVC.saved = try context.fetch(request)
         } catch {
             print("Error fetching data from context \(error)")
         }

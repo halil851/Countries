@@ -91,6 +91,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Saved Countries" id="s9T-5e-M6A"/>
+                    <connections>
+                        <segue destination="Ux5-VK-gKQ" kind="show" identifier="goToDetailFromSavedVC" id="TeP-T9-CuN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBR-bc-1YQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -295,6 +298,9 @@
             <point key="canvasLocation" x="-1297.1014492753625" y="-777.45535714285711"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="TeP-T9-CuN"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
