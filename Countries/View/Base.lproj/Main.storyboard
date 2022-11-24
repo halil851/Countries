@@ -63,7 +63,7 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="saveButtonPressed:" destination="5l6-2a-vWH" eventType="touchUpInside" id="duB-Rh-wL8"/>
+                                                        <action selector="savedButtonTapped:" destination="17G-xC-rcC" eventType="touchUpInside" id="oQ1-Vi-9gV"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -128,9 +128,10 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pM-Ys-Z2M">
                                 <rect key="frame" x="20" y="568" width="170" height="58"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back to Root"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="Ux5-VK-gKQ" eventType="touchUpInside" id="11H-KZ-UlF"/>
+                                    <action selector="goBack" destination="dSU-Gc-zk7" eventType="touchUpInside" id="wjr-IB-Nbv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -247,16 +248,17 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKf-ty-lgW">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8b1-By-heM">
                                                     <rect key="frame" x="297" y="14" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" image="star" catalog="system">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="savedButtonPressed:" destination="q8V-C1-js6" eventType="touchUpInside" id="xfG-Pb-aKV"/>
+                                                        <action selector="saveButtonTapped:" destination="1zF-qv-eN2" eventType="touchUpInside" id="Pdy-gn-pVa"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -274,7 +276,7 @@
                                 <connections>
                                     <outlet property="countryLabel" destination="z6i-8I-mk6" id="Gpi-Hx-hTn"/>
                                     <outlet property="countryView" destination="Cdx-9w-Zpj" id="6Lq-Jl-Uge"/>
-                                    <outlet property="savedButton" destination="TKf-ty-lgW" id="RGd-Gs-LQM"/>
+                                    <outlet property="saveButton" destination="8b1-By-heM" id="3Fh-i0-0fd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -290,7 +292,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZK-ZP-XxQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1296" y="-777"/>
+            <point key="canvasLocation" x="-1297.1014492753625" y="-777.45535714285711"/>
         </scene>
     </scenes>
     <resources>

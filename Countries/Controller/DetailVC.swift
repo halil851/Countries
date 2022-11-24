@@ -27,12 +27,15 @@ class DetailVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navBar.title = passCountryName
         getImage()
         countryCode.text = "Country Code: \(passCountryCode)"
         
         isSaved()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
     }
     
     func isSaved() {
@@ -43,10 +46,9 @@ class DetailVC : UIViewController {
         }
     }
     
-    @IBAction func buttonPressed(_ sender: UIButton) {
-//        performSegue(withIdentifier: "goToHome", sender: self)
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {   // BACK TO ROOT BUTTON
         navigationController?.popToRootViewController(animated: true)
-
     }
     
     
@@ -80,7 +82,7 @@ class DetailVC : UIViewController {
         
         let SVGCoder = SDImageSVGCoder.shared
         SDImageCodersManager.shared.addCoder(SVGCoder)
-        //let fullNameArr = countryName.split(separator:" ")
+       
         
         if let url = URL(string: "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/\(passCountryCode)?limit=10&rapidapi-key=ee432ced90msh2d96ce8d845cc2cp1a83dajsn5bc61b24a12f") {
             
@@ -108,7 +110,7 @@ class DetailVC : UIViewController {
         
         self.flagImage.sd_setImage(with: svgURL) { (image, error, cacheType, url) in
             if image != nil {
-                print("Image loaded succesfully")
+//                print("Image loaded succesfully")
             }
         }
     }

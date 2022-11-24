@@ -17,6 +17,7 @@ struct Country: Codable {
     let name: String
     let wikiDataId: String
     
+    
 }
 
 
