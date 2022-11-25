@@ -4,22 +4,18 @@
 //
 //  Created by halil dikişli on 5.10.2022.
 //
-
 import UIKit
 import Foundation
 import CoreData
 
 class HomeVC:  UITableViewController {
     
-    //var homeCell = HomeCell()
     static let shared = HomeVC()
-    
     static var countryList = [Country]()
     var name = Country(code: "", currencyCodes: [""], name: "", wikiDataId: "")
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var itemsToCD = [Item]()
-//    static var saved = [Item]()
     var sendTheIndexPathRow = Int()
    
     
@@ -27,7 +23,6 @@ class HomeVC:  UITableViewController {
         super.viewDidLoad()
        
         loadItems()
-        
         tableView.reloadData()
         tableView.separatorStyle = .none
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -40,7 +35,11 @@ class HomeVC:  UITableViewController {
         }
         
         CountriesAPI.shared.fetchCountriesList(onCompletion: anonymousFunction)
-       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        tableView.reloadData()
     }
     
     
@@ -59,12 +58,12 @@ class HomeVC:  UITableViewController {
         saveItems()
     }
 }
+
+
 // MARK: - TableView Data Source Methods
 
 extension HomeVC {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
         return HomeVC.countryList.count
     }
     
@@ -72,61 +71,29 @@ extension HomeVC {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountriesCell", for: indexPath) as! HomeCell
         
-        let name = HomeVC.countryList[indexPath.row]
-        cell.countryLabel.text = name.name
+        let country = HomeVC.countryList[indexPath.row]
+        cell.countryLabel.text = country.name
 
-        // if itemsToCD already exist // it avoids adding unnecessery new Item
+        // if itemsToCD already exist, it avoids adding unnecessery new Item
+        // it only works when you run the app very first time
         if itemsToCD.count < HomeVC.countryList.count {
             let newItem = Item(context: context)
-            newItem.title = name.name
+            newItem.title = country.name
             newItem.done = false
             itemsToCD.append(newItem)
-//            HomeVC.saved.append(newItem)
         }
-        
-        
         
         if itemsToCD[indexPath.row].done {
             cell.saveButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            
-            
         } else {
             cell.saveButton.setImage(UIImage(systemName: "star"), for: .normal)
-            
         }
       
         saveItems()
         tableView.rowHeight = 70
         return cell
     }
-    
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        tableView.reloadData()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
-    override func viewDidDisappear(_ animated: Bool) {
-       
-    }
-    
-    
-    
-    func reloadTable(){
-        tableView.reloadData()
-        print("si")
-    }
-    
 }
-
 
 
 // MARK: - TableView Delegate Methods
@@ -134,7 +101,6 @@ extension HomeVC {
 extension HomeVC {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         name = HomeVC.countryList[indexPath.row]
-//        print(name.name)
         
         sendTheIndexPathRow = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
@@ -148,28 +114,28 @@ extension HomeVC {
             let destinationVC = segue.destination as! DetailVC
             
             destinationVC.passCountryName = name.name
-            destinationVC.passCountryCode = name.code ?? "None"
+            destinationVC.passCountryCode = name.code 
             destinationVC.passWikiDataId = name.wikiDataId
             destinationVC.getIndexPathRow = sendTheIndexPathRow
         }
     }
-    
-    // MARK: - CoreData Storage Manager
+}
 
+
+// MARK: - CoreData Storage Manager
+extension HomeVC {
     func saveItems() {
-        do{
+        do {
             try context.save()
         } catch {
             print("Error saving context (HomeVC) \(error)")
         }
-
     }
 
     func loadItems() {
         let request : NSFetchRequest<Item> = Item.fetchRequest()
         do {
             itemsToCD = try context.fetch(request)
-//            HomeVC.saved = try context.fetch(request)
         } catch {
             print("Error fetching data from context \(error)")
         }

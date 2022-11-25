@@ -10,17 +10,12 @@ import SDWebImageSVGCoder
 
 
 class DetailVC : UIViewController {
-    
-    static let shared = DetailVC()
+
     @IBOutlet weak var navBar: UINavigationItem!
-    let savedVC = SavedVC()
+    
     @IBOutlet weak var savedButton: UIButton!
     @IBOutlet weak var countryCode: UILabel!
     @IBOutlet weak var flagImage: UIImageView!
-    
-    
-    var countryNames = [CountryDetails]()
-    
     @IBOutlet weak var button: UIButton!
     
     var passCountryName = String()
@@ -34,7 +29,7 @@ class DetailVC : UIViewController {
         navBar.title = passCountryName
         getImage()
         countryCode.text = "Country Code: \(passCountryCode)"
-        
+        button.isHidden = true
         isSaved()
     }
     
@@ -53,10 +48,10 @@ class DetailVC : UIViewController {
         }
     }
     
-    
-    @IBAction func buttonPressed(_ sender: UIButton) {   // BACK TO ROOT BUTTON
-        navigationController?.popToRootViewController(animated: true)
-    }
+    // Make the button visible first, it allows you to go back
+//    @IBAction func buttonPressed(_ sender: UIButton) {   // BACK TO ROOT BUTTON
+//        navigationController?.popToRootViewController(animated: true)
+//    }
     
     
     @IBAction func savedButtonTap(_ sender: UIButton) {

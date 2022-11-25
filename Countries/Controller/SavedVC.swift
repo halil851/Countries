@@ -4,7 +4,6 @@
 //
 //  Created by halil dikişli on 5.10.2022.
 //
-
 import UIKit
 import Foundation
 import CoreData
@@ -68,7 +67,6 @@ class SavedVC:  UITableViewController {
             result[0].done = false     // MAKE THE FOUNDED DATA'S DONE PROPERTY FALSE
             print("\(String(describing: result[0].title)) is unsaved from Saved Countries Page")
             savedCountries.remove(at: indxPath!.row)   // REMOVE THE UNSAVED COUNTRY FROM SAVED COUNTRY PAGE
-            
         } catch {
             print("Error fetching data from Saved Countries context \(error)")
         }
@@ -78,11 +76,13 @@ class SavedVC:  UITableViewController {
         // SAVE ALL CHANGES
         HomeVC.shared.saveItems()
     }
-    
-    
-    
-    
-    // MARK: - TABLEVIEW DATA SOURCE
+}
+
+
+// MARK: - TableView Data Source Methods
+
+extension SavedVC {
+   
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  savedCountries.count
     }
@@ -100,38 +100,37 @@ class SavedVC:  UITableViewController {
         tableView.rowHeight = 70
         return cell
     }
-    
+}
+
+
+// MARK: - TableView Delegate Methods
+
+extension SavedVC {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         passName = savedCountries[indexPath.row].title
         
-        
-        
-
         performSegue(withIdentifier: "goToDetailFromSavedVC", sender: self)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var sendIndexPathRow = 0
+        var sendIndexPathRow = -1
+        
         if segue.identifier == "goToDetailFromSavedVC" {
-            
             let destinationVC = segue.destination as! DetailVC
             for country in HomeVC.countryList {
-                
                 sendIndexPathRow += 1
-
                 if country.name == passName {
-                    destinationVC.getIndexPathRow = sendIndexPathRow - 1
+                    destinationVC.getIndexPathRow = sendIndexPathRow
                     destinationVC.passCountryName = country.name
-                    destinationVC.passCountryCode = country.code ?? "TR"
+                    destinationVC.passCountryCode = country.code
                     destinationVC.passWikiDataId = country.wikiDataId
                 }
             }
         }
     }
 }
-
 
 
 

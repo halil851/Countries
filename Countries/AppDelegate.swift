@@ -11,8 +11,6 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -35,9 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Angele Yu says that When you want to add CoreData to your already existing project, copy below and paste it to your AppDelegate file.
     
-    func applicationWillTerminate(_ application: UIApplication) {
-        self.saveContext()
-    }
+//    func applicationWillTerminate(_ application: UIApplication) {
+//        self.saveContext()
+//    }
 
     // MARK: - Core Data stack
 

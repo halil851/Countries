@@ -5,13 +5,11 @@
 //  Created by halil dikişli on 5.10.2022.
 //
 import UIKit
-import CoreData
 
 
 class HomeCell: UITableViewCell, UINavigationControllerDelegate {
     
     @IBOutlet weak var saveButton: UIButton!
-    
     @IBOutlet weak var countryView: UIView!
     @IBOutlet weak var countryLabel: UILabel!
     
