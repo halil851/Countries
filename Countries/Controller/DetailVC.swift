@@ -9,6 +9,8 @@ import UIKit
 import SDWebImageSVGCoder
 
 
+
+
 class DetailVC : UIViewController {
 
     @IBOutlet weak var navBar: UINavigationItem!
@@ -23,30 +25,28 @@ class DetailVC : UIViewController {
     var passWikiDataId = String()
     var getIndexPathRow = Int()
     
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         navBar.title = passCountryName
         getImage()
         countryCode.text = "Country Code: \(passCountryCode)"
 //        button.isHidden = true
         isSaved()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
         
     }
     
-    
-    
     func isSaved() {
-        print(getIndexPathRow)
-        if HomeVC.shared.itemsToCD[getIndexPathRow].done{
+
+        if itemsToCD[getIndexPathRow].done{
             savedButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         } else {
             savedButton.setImage(UIImage(systemName: "star"), for: .normal)
         }
     }
+    
     
      //Make the button visible first, it allows you to go back
     @IBAction func buttonPressed(_ sender: UIButton) {   // BACK TO ROOT BUTTON
@@ -62,9 +62,10 @@ class DetailVC : UIViewController {
         } else {
             savedButton.setImage(UIImage(systemName: "star"), for: .normal)
         }
-        HomeVC.shared.itemsToCD[getIndexPathRow].done = !HomeVC.shared.itemsToCD[getIndexPathRow].done
-        
+        itemsToCD[getIndexPathRow].done = !itemsToCD[getIndexPathRow].done
+
         HomeVC.shared.saveItems()
+        
     }
     
     

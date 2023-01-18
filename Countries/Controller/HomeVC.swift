@@ -8,6 +8,8 @@ import UIKit
 import Foundation
 import CoreData
 
+var itemsToCD = [Item]()
+    
 class HomeVC:  UITableViewController {
     
     static let shared = HomeVC()
@@ -15,7 +17,7 @@ class HomeVC:  UITableViewController {
     var name = Country(code: "", currencyCodes: [""], name: "", wikiDataId: "")
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var itemsToCD = [Item]()
+    var itemsToCD1 = [Item]()
     var sendTheIndexPathRow = Int()
     
    
@@ -53,6 +55,9 @@ class HomeVC:  UITableViewController {
         
         tableView.reloadData()
     }
+    
+    
+    
     
     
     // MARK: - Save button pressed
@@ -97,7 +102,10 @@ extension HomeVC {
             newItem.done = false
             itemsToCD.append(newItem)
             print(newItem)
+            
         }
+        
+        
         
         // Check if Countries from API has been changed. If so, update to Core Data.
         if country.name != itemsToCD[indexPath.row].title {
@@ -115,6 +123,7 @@ extension HomeVC {
         tableView.rowHeight = 70
         return cell
     }
+    
 }
 
 
@@ -139,6 +148,7 @@ extension HomeVC {
             destinationVC.passCountryCode = name.code 
             destinationVC.passWikiDataId = name.wikiDataId
             destinationVC.getIndexPathRow = sendTheIndexPathRow
+//            destinationVC.itemsToCD = itemsToCD
         }
     }
 }
@@ -161,10 +171,6 @@ extension HomeVC {
         } catch {
             print("Error fetching data from context \(error)")
         }
-    }
-    
-    func deleteItems() {
-        
     }
     
     func updateItems(indexPath: IndexPath, country: Country ) {

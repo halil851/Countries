@@ -10,7 +10,6 @@ import CoreData
 
 class SavedVC:  UITableViewController {
 
-    static let shared = SavedVC()
     var savedCountries = [CountrySavedManager]()
     var passName = String()
     
@@ -23,17 +22,14 @@ class SavedVC:  UITableViewController {
         getSavedCountries()
         
     }
-    override func viewDidAppear(_ animated: Bool) {
-        refreshData()
-    }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         refreshData()
     }
     
     
     func getSavedCountries () {
-        for i in HomeVC.shared.itemsToCD {
+        for i in itemsToCD {
             if i.done  {
                 let countryData = CountrySavedManager(done: i.done, title: i.title!)
                 savedCountries.append(countryData)
