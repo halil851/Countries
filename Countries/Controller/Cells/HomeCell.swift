@@ -7,7 +7,7 @@
 import UIKit
 
 
-class HomeCell: UITableViewCell, UINavigationControllerDelegate {
+class HomeCell: UITableViewCell {
     
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var countryView: UIView!

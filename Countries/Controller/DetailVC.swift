@@ -29,7 +29,7 @@ class DetailVC : UIViewController {
         navBar.title = passCountryName
         getImage()
         countryCode.text = "Country Code: \(passCountryCode)"
-        button.isHidden = true
+//        button.isHidden = true
         isSaved()
     }
     
@@ -48,10 +48,11 @@ class DetailVC : UIViewController {
         }
     }
     
-    // Make the button visible first, it allows you to go back
-//    @IBAction func buttonPressed(_ sender: UIButton) {   // BACK TO ROOT BUTTON
-//        navigationController?.popToRootViewController(animated: true)
-//    }
+     //Make the button visible first, it allows you to go back
+    @IBAction func buttonPressed(_ sender: UIButton) {   // BACK TO ROOT BUTTON
+        navigationController?.popToRootViewController(animated: true)
+        
+    }
     
     
     @IBAction func savedButtonTap(_ sender: UIButton) {

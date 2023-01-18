@@ -17,10 +17,20 @@ class HomeVC:  UITableViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var itemsToCD = [Item]()
     var sendTheIndexPathRow = Int()
+    
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Change status bar colour
+        
+     /*   let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor.red
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance */
        
         loadItems()
         tableView.reloadData()
@@ -32,6 +42,8 @@ class HomeVC:  UITableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+            
+            
         }
         
         CountriesAPI.shared.fetchCountriesList(onCompletion: anonymousFunction)
@@ -73,15 +85,25 @@ extension HomeVC {
         
         let country = HomeVC.countryList[indexPath.row]
         cell.countryLabel.text = country.name
+        
+       
 
         // if itemsToCD already exist, it avoids adding unnecessery new Item
         // it only works when you run the app very first time
+      
         if itemsToCD.count < HomeVC.countryList.count {
             let newItem = Item(context: context)
             newItem.title = country.name
             newItem.done = false
             itemsToCD.append(newItem)
+            print(newItem)
         }
+        
+        // Check if Countries from API has been changed. If so, update to Core Data.
+        if country.name != itemsToCD[indexPath.row].title {
+           updateItems(indexPath: indexPath, country: country)
+        }
+        
         
         if itemsToCD[indexPath.row].done {
             cell.saveButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
@@ -139,6 +161,16 @@ extension HomeVC {
         } catch {
             print("Error fetching data from context \(error)")
         }
+    }
+    
+    func deleteItems() {
+        
+    }
+    
+    func updateItems(indexPath: IndexPath, country: Country ) {
+        print("Data from API has been changed. New Country: \(country.name) has been updated.")
+        itemsToCD[indexPath.row].title = country.name
+        itemsToCD[indexPath.row].done = false
     }
 }
 
