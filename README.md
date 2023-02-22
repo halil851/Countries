@@ -12,6 +12,7 @@ This app shows you countries and their information. Such as their flag, country 
 
     * MVC Design Pattern
     * UIKit
+    * Swift Package Manager
     * SDWebImageSVGCoder - 3rd party library
     * CoreData
 
