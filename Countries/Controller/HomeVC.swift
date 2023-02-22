@@ -26,7 +26,6 @@ class HomeVC:  UITableViewController {
         super.viewDidLoad()
         
         // Change status bar colour
-        
      /*   let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = UIColor.red
         
@@ -39,6 +38,7 @@ class HomeVC:  UITableViewController {
         tableView.separatorStyle = .none
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
+        //Adding countries to countryList
         let anonymousFunction = { (fetchedCountryList: [Country]) in
             HomeVC.countryList = fetchedCountryList
             DispatchQueue.main.async {
@@ -90,8 +90,6 @@ extension HomeVC {
         
         let country = HomeVC.countryList[indexPath.row]
         cell.countryLabel.text = country.name
-        
-       
 
         // if itemsToCD already exist, it avoids adding unnecessery new Item
         // it only works when you run the app very first time
